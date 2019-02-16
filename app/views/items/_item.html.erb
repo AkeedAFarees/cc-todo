@@ -1,10 +1,12 @@
 <div class="row clearfix">
-  <i style="opacity: 0.4;" class="fa fa-check"></i>
+
   <div class="todo_item">
-    <p> <%= item.content %> </p>
+      <p> <%= item.content %> </p>
   </div>
 
   <div class="trash">
-    <%= link_to 'Delete Task', todo_list_item_path(@todo_list, item.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to todo_list_item_path(@todo_list, item.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+      <i class="fa fa-lg fa-trash"></i>
+    <% end %>
   </div>
 </div>
